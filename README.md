@@ -36,11 +36,12 @@ This project was created as part of the backend assessment.
 
 ## ▶️ Running the Server
 
-### **1. Install dependencies**
+### 
+**1. Install dependencies**
 
 pip install fastapi uvicorn pydantic 
 
-2. Start the server
+**1. Start the  server**
 uvicorn main:app --reload
 
 
