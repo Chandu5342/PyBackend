@@ -35,20 +35,20 @@ This project was created as part of the backend assessment.
 
 
 ## ▶️ Running the Server
-
+```
 ### 
 **1. Install dependencies**
 
 pip install fastapi uvicorn pydantic 
 
-**1. Start the  server**
+**2. Start the  server**
 uvicorn main:app --reload
 
 
 Server runs at:
 
 http://127.0.0.1:8000
-
+```
 
 API docs:
 
