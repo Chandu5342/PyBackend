@@ -1,4 +1,4 @@
-# 📝 FastAPI Task Management API  
+#  FastAPI Task Management API  
 A simple Task Management REST API built using **FastAPI** with **in-memory storage**.  
 This project was created as part of the backend assessment.
 
@@ -20,7 +20,6 @@ This project was created as part of the backend assessment.
 - **FastAPI**  
 - **Uvicorn**  
 - **Pydantic**  
-- **Pytest**
 
 ---
 
@@ -28,10 +27,7 @@ This project was created as part of the backend assessment.
 ├── main.py
 ├── models.py
 ├── schemas.py
-├── storage.py
-├── utils.py
-├── tests/
-│ └── test_tasks.py
+├── storage.py  
 └── README.md
 
 
@@ -41,7 +37,7 @@ This project was created as part of the backend assessment.
 
 ### **1. Install dependencies**
 ```sh
-pip install fastapi uvicorn pydantic pytest
+pip install fastapi uvicorn pydantic 
 
 2. Start the server
 uvicorn main:app --reload
@@ -55,32 +51,15 @@ http://127.0.0.1:8000
 API docs:
 
 http://127.0.0.1:8000/docs
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/78f85658-9b75-49a8-9c6f-7cbebc133235" />
+
+
 
 📌 API Endpoints
 1. Create Task
 POST /tasks
-Request Body:
-{
-  "title": "Buy groceries",
-  "description": "Milk, Bread",
-  "status": "pending",
-  "priority": "medium",
-  "due_date": "2025-01-10T10:00:00"
-}
 
-Response:
-201 Created
-
-{
-  "id": "uuid",
-  "title": "Buy groceries",
-  "description": "Milk, Bread",
-  "status": "pending",
-  "priority": "medium",
-  "due_date": "2025-01-10T10:00:00",
-  "created_at": "2025-12-04T10:00:00",
-  "updated_at": "2025-12-04T10:00:00"
-}
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/5905cd87-3f7e-41cb-a502-bef55ac52477" />
 
 2. Get All Tasks
 GET /tasks
@@ -89,26 +68,12 @@ Filters:
 /tasks?priority=high
 /tasks?is_overdue=true
 
-Response Example:
-[
-  {
-    "id": "uuid",
-    "title": "Buy groceries",
-    "status": "pending",
-    "priority": "medium",
-    "is_overdue": false
-  }
-]
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/043747ea-9558-44b0-a427-431f49255cbd" />
 
 3. Get Task by ID
 GET /tasks/{id}
-Response:
-{
-  "id": "uuid",
-  "title": "Buy groceries",
-  "status": "pending",
-  "priority": "medium"
-}
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/e8390ccf-faac-498f-931e-f11b95f6ac55" />
+
 
 4. Update Task
 PUT /tasks/{id}
@@ -117,6 +82,7 @@ Request:
   "title": "Buy groceries updated",
   "status": "completed"
 }
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/9d2f74ef-b8cd-4e81-bc60-c34f8a925eaf" />
 
 Business Rule:
 
@@ -124,6 +90,9 @@ If status becomes completed, set completed_at timestamp.
 
 5. Delete Task
 DELETE /tasks/{id}
+
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/8bf69e60-9b6e-4e7f-90a0-2f2b999daaef" />
+
 Business Rule:
 
 ❌ Tasks CANNOT be deleted if status = in_progress.
@@ -154,26 +123,6 @@ When status changes → completed
 
 "completed_at": "<timestamp>"
 
-🧪 Running Tests
-Run all tests
-pytest
-
-Example test file: tests/test_tasks.py
-def test_create_task(client):
-    response = client.post("/tasks", json={"title": "Test", "priority": "low"})
-    assert response.status_code == 201
-
-📘 Example cURL Commands
-Create Task
-curl -X POST "http://127.0.0.1:8000/tasks" \
--H "Content-Type: application/json" \
--d '{"title":"Test Task","priority":"medium"}'
-
-List Tasks
-curl "http://127.0.0.1:8000/tasks?status=pending"
-
-Delete Task
-curl -X DELETE "http://127.0.0.1:8000/tasks/<id>"
 
 ✅ Conclusion
 
@@ -187,4 +136,3 @@ Business rules handling
 
 Clean folder structure
 
-Testing with pytest
