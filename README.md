@@ -23,20 +23,21 @@ This project was created as part of the backend assessment.
 
 ---
 
+```
 ## 📁 Project Structure
 ├── main.py
 ├── models.py
 ├── schemas.py
 ├── storage.py  
 └── README.md
+```
 
 
----
 
 ## ▶️ Running the Server
 
 ### **1. Install dependencies**
-```sh
+
 pip install fastapi uvicorn pydantic 
 
 2. Start the server
@@ -47,7 +48,7 @@ Server runs at:
 
 http://127.0.0.1:8000
 
----
+
 API docs:
 
 http://127.0.0.1:8000/docs
